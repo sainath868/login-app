@@ -1,0 +1,12 @@
+<h2>Register</h2>
+
+<form action="/register" method="post">
+    Username: <input type="text" name="username"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    <button type="submit">Register</button>
+</form>
+
+<p style="color:red;">[[${error}]]</p>
+<p style="color:green;">[[${msg}]]</p>
+
+<a href="/login">Already have account? Login</a>
