@@ -1,14 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #222;
+        }
+
+        .success-card {
+            width: 100%;
+            max-width: 380px;
+            background: #fff;
+            border: 1px solid #d9dee3;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            padding: 28px 24px;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a7f37;
+        }
+
+        p {
+            margin: 0 0 20px;
+            color: #555;
+        }
+
+        .logout-btn {
+            display: inline-block;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            background: #2f6feb;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover { background: #2558bb; }
+    </style>
 </head>
 <body>
-
-<h2>Login Successful 🎉</h2>
-<a href="/logout">
-    <button>Logout</button>
-</a>
-
+<div class="success-card">
+    <h2>Login Successful</h2>
+    <p>Welcome! You have successfully signed in.</p>
+    <a class="logout-btn" href="/logout">Logout</a>
+</div>
 </body>
 </html>
