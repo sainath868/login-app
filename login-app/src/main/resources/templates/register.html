@@ -1,12 +1,127 @@
-<h2>Register</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        * { box-sizing: border-box; }
 
-<form action="/register" method="post">
-    Username: <input type="text" name="username"><br><br>
-    Password: <input type="password" name="password"><br><br>
-    <button type="submit">Register</button>
-</form>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #222;
+        }
 
-<p style="color:red;">[[${error}]]</p>
-<p style="color:green;">[[${msg}]]</p>
+        .register-card {
+            width: 100%;
+            max-width: 380px;
+            background: #fff;
+            border: 1px solid #d9dee3;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+        }
 
-<a href="/login">Already have account? Login</a>
+        h2 {
+            margin: 0 0 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-group { margin-bottom: 14px; }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #bfc7d1;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2f6feb;
+            box-shadow: 0 0 0 3px rgba(47, 111, 235, 0.15);
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 12px;
+            margin-top: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            background: #2f6feb;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover { background: #2558bb; }
+
+        .error {
+            min-height: 1.25rem;
+            margin: 12px 0 4px;
+            color: #c21f39;
+            text-align: center;
+            font-size: 0.92rem;
+        }
+
+        .success {
+            min-height: 1.25rem;
+            margin: 0 0 4px;
+            color: #1a7f37;
+            text-align: center;
+            font-size: 0.92rem;
+        }
+
+        .login-link {
+            display: block;
+            margin-top: 8px;
+            text-align: center;
+            font-size: 0.92rem;
+            color: #2f6feb;
+            text-decoration: none;
+        }
+
+        .login-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="register-card">
+    <h2>Create Account</h2>
+
+    <form action="/register" method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" placeholder="Choose a username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Choose a password" required>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p class="error">[[${error}]]</p>
+    <p class="success">[[${msg}]]</p>
+    <a class="login-link" href="/login">Already have an account? Login</a>
+</div>
+</body>
+</html>
