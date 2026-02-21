@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f7fb; margin: 0; display: grid; place-items: center; min-height: 100vh; }
+        .card { background: #fff; width: 420px; padding: 24px; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+        .meta { background: #eef4ff; border-radius: 8px; padding: 12px; margin: 12px 0; }
+        a.btn { display: inline-block; text-decoration: none; padding: 10px 14px; border-radius: 8px; font-weight: 700; margin-right: 8px; }
+        .primary { background: #2f6feb; color: #fff; }
+        .danger { background: #d1242f; color: #fff; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Spring Security OAuth2 Demo</h1>
+
+    <!-- Guest view: asks the user to start OAuth2 login. -->
+    <div th:if="${!authenticated}">
+        <p>You are not logged in yet.</p>
+        <a class="btn primary" href="/login">Login with Google/GitHub</a>
+    </div>
+
+    <!-- Authenticated view: shows identity details returned by provider claims. -->
+    <div th:if="${authenticated}">
+        <p>Welcome back! Your profile information:</p>
+        <div class="meta">
+            <div><strong>Name:</strong> <span th:text="${name}">User Name</span></div>
+            <div><strong>Email:</strong> <span th:text="${email}">user@example.com</span></div>
+        </div>
+        <a class="btn primary" href="/success">View success page</a>
+        <a class="btn danger" href="/logout">Logout</a>
+    </div>
+</div>
+</body>
+</html>

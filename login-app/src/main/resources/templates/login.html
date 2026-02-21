@@ -1,130 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>OAuth2 Login</title>
     <style>
-        :root {
-            color-scheme: light;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #222;
-        }
-
-        .login-card {
-            width: 100%;
-            max-width: 380px;
-            background: #fff;
-            border: 1px solid #d9dee3;
-            border-radius: 8px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-            padding: 24px;
-        }
-
-        h2 {
-            margin: 0 0 20px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 14px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #bfc7d1;
-            border-radius: 4px;
-            font-size: 0.95rem;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #2f6feb;
-            box-shadow: 0 0 0 3px rgba(47, 111, 235, 0.15);
-        }
-
-        button {
-            width: 100%;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 12px;
-            margin-top: 4px;
-            font-size: 1rem;
-            font-weight: 600;
-            background: #2f6feb;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #2558bb;
-        }
-
-        .error {
-            min-height: 1.25rem;
-            margin: 12px 0 4px;
-            color: #c21f39;
-            text-align: center;
-            font-size: 0.92rem;
-        }
-
-        .register-link {
-            display: block;
-            margin-top: 8px;
-            text-align: center;
-            font-size: 0.92rem;
-            color: #2f6feb;
-            text-decoration: none;
-        }
-
-        .register-link:hover {
-            text-decoration: underline;
-        }
+        body { font-family: Arial, sans-serif; background: #f5f7fb; margin: 0; display: grid; place-items: center; min-height: 100vh; }
+        .card { background: #fff; width: 380px; padding: 24px; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+        h1 { margin: 0 0 16px; font-size: 1.4rem; }
+        p { color: #555; }
+        .oauth-btn { display: block; text-align: center; text-decoration: none; margin-top: 12px; padding: 12px; border-radius: 8px; font-weight: 700; }
+        .google { background: #4285F4; color: #fff; }
+        .github { background: #24292e; color: #fff; }
+        .home-link { display: inline-block; margin-top: 18px; color: #2f6feb; text-decoration: none; }
     </style>
 </head>
 <body>
-<div class="login-card">
-    <h2>Login</h2>
+<div class="card">
+    <h1>Sign in with OAuth2</h1>
+    <p>Use one of the providers below to authenticate securely.</p>
 
-    <form action="/login" method="post">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input id="username" type="text" name="username" placeholder="Enter your username" required>
-        </div>
+    <!-- Spring Security automatically handles these provider endpoints. -->
+    <a class="oauth-btn google" href="/oauth2/authorization/google">Continue with Google</a>
+    <a class="oauth-btn github" href="/oauth2/authorization/github">Continue with GitHub</a>
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" name="password" placeholder="Enter your password" required>
-        </div>
-
-        <button type="submit">Sign In</button>
-    </form>
-
-    <p class="error">[[${error}]]</p>
-    <a class="register-link" href="/register">New user? Register here</a>
+    <a class="home-link" href="/">Back to home</a>
 </div>
 </body>
 </html>
