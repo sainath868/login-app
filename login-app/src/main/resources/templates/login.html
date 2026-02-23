@@ -3,57 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login | Secure Portal</title>
     <style>
+        * { box-sizing: border-box; }
         body {
             margin: 0;
-            background: #d8d8d8;
-            font-family: "Times New Roman", Times, serif;
-            color: #000;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: radial-gradient(circle at top left, #d6e4ff 0%, #eef2ff 45%, #f4e9ff 100%);
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            color: #1f2a44;
         }
 
         .page {
-            width: 520px;
-            margin: 60px auto;
-            background: #f4f4f4;
-            border: 2px solid #444;
-            padding: 20px 22px;
+            width: min(520px, 100%);
+            background: #fff;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 18px 45px rgba(31, 42, 68, 0.18);
         }
 
         h1 {
-            margin: 0 0 10px;
-            font-size: 30px;
+            margin: 0;
             text-align: center;
-            border-bottom: 1px solid #666;
-            padding-bottom: 8px;
+            font-size: 2rem;
         }
 
         p {
-            margin: 12px 0;
-            line-height: 1.4;
+            margin: 14px 0 18px;
+            text-align: center;
+            color: #4c5877;
         }
 
         .auth-link {
             display: block;
-            text-align: center;
             margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #555;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #d6ddff;
+            background: #f6f8ff;
+            color: #1f2a44;
             text-decoration: none;
-            color: #000;
-            background: #eaeaea;
-            font-weight: bold;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
 
         .auth-link:hover {
-            background: #dcdcdc;
+            background: #5569f7;
+            border-color: #5569f7;
+            color: #fff;
+            transform: translateY(-1px);
         }
 
         .home-link {
             display: inline-block;
             margin-top: 16px;
-            color: #000;
+            color: #4b57e6;
+            text-decoration: none;
+            font-weight: 600;
         }
+
+        .home-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -61,10 +75,10 @@
     <h1>User Login</h1>
     <p>Please choose a login provider below to continue.</p>
 
-    <a class="auth-link" href="/oauth2/authorization/google">Login using Google</a>
-    <a class="auth-link" href="/oauth2/authorization/github">Login using GitHub</a>
+    <a class="auth-link" href="/oauth2/authorization/google">Continue with Google</a>
+    <a class="auth-link" href="/oauth2/authorization/github">Continue with GitHub</a>
 
-    <a class="home-link" href="/">Return to home page</a>
+    <a class="home-link" href="/">← Return to home page</a>
 </div>
 </body>
 </html>

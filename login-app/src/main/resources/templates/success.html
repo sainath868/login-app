@@ -3,50 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Success</title>
+    <title>Success | Secure Portal</title>
     <style>
+        * { box-sizing: border-box; }
         body {
             margin: 0;
-            background: #d8d8d8;
-            font-family: "Times New Roman", Times, serif;
-            color: #000;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0ecff 0%, #f6f8ff 45%, #f6ecff 100%);
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            color: #1f2a44;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
         }
 
         .page {
-            width: 560px;
-            margin: 50px auto;
-            background: #f4f4f4;
-            border: 2px solid #444;
-            padding: 20px 22px;
+            width: min(640px, 100%);
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 22px 55px rgba(31, 42, 68, 0.2);
         }
 
         h1 {
-            margin: 0 0 12px;
+            margin: 0 0 10px;
             text-align: center;
-            font-size: 31px;
-            border-bottom: 1px solid #666;
-            padding-bottom: 8px;
+            font-size: 2rem;
+            letter-spacing: 0.02em;
+        }
+
+        p {
+            margin: 10px 0;
+            color: #3e4b66;
+            line-height: 1.5;
+            text-align: center;
         }
 
         .panel {
-            border: 1px solid #777;
-            background: #ededed;
-            padding: 12px;
-            margin: 14px 0;
+            border: 1px solid #e3e8ff;
+            border-radius: 14px;
+            background: linear-gradient(180deg, #f9fbff 0%, #f2f5ff 100%);
+            padding: 16px 18px;
+            margin: 18px 0;
+            line-height: 1.7;
         }
 
-        a {
-            display: inline-block;
-            margin-right: 10px;
-            margin-top: 6px;
-            border: 1px solid #555;
-            padding: 8px 10px;
-            background: #e2e2e2;
-            color: #000;
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            padding: 10px 16px;
+            background: #f0f3ff;
+            border: 1px solid #d5ddff;
+            color: #1f2a44;
+            font-weight: 600;
             text-decoration: none;
+            transition: all 0.2s ease;
         }
 
-        a:hover { background: #d2d2d2; }
+        .actions a:hover {
+            background: #5569f7;
+            color: #fff;
+            border-color: #5569f7;
+            transform: translateY(-1px);
+        }
     </style>
 </head>
 <body>
@@ -59,8 +88,10 @@
         <div><strong>Email:</strong> <span th:text="${email}">user@example.com</span></div>
     </div>
 
-    <a href="/">Back to Home</a>
-    <a href="/logout">Logout</a>
+    <div class="actions">
+        <a href="/">Back to Home</a>
+        <a href="/logout">Logout</a>
+    </div>
 </div>
 </body>
 </html>
