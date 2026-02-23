@@ -5,123 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
-        * { box-sizing: border-box; }
-
         body {
             margin: 0;
-            min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #222;
+            background: #d8d8d8;
+            font-family: "Times New Roman", Times, serif;
+            color: #000;
         }
 
-        .register-card {
-            width: 100%;
-            max-width: 380px;
-            background: #fff;
-            border: 1px solid #d9dee3;
-            border-radius: 8px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-            padding: 24px;
+        .page {
+            width: 520px;
+            margin: 50px auto;
+            background: #f4f4f4;
+            border: 2px solid #444;
+            padding: 20px 22px;
         }
 
         h2 {
-            margin: 0 0 20px;
+            margin: 0 0 16px;
+            font-size: 30px;
             text-align: center;
-            font-size: 1.5rem;
-            font-weight: 600;
+            border-bottom: 1px solid #666;
+            padding-bottom: 8px;
         }
 
-        .form-group { margin-bottom: 14px; }
+        .row {
+            margin-bottom: 14px;
+        }
 
         label {
             display: block;
             margin-bottom: 6px;
-            font-size: 0.95rem;
-            font-weight: 600;
+            font-size: 20px;
         }
 
         input {
             width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #bfc7d1;
-            border-radius: 4px;
-            font-size: 0.95rem;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #2f6feb;
-            box-shadow: 0 0 0 3px rgba(47, 111, 235, 0.15);
+            box-sizing: border-box;
+            border: 1px solid #666;
+            padding: 8px;
+            font-size: 17px;
+            font-family: "Times New Roman", Times, serif;
+            background: #fff;
         }
 
         button {
             width: 100%;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 12px;
-            margin-top: 4px;
-            font-size: 1rem;
-            font-weight: 600;
-            background: #2f6feb;
-            color: #fff;
+            border: 1px solid #555;
+            background: #e2e2e2;
+            padding: 10px;
+            font-size: 20px;
+            font-family: "Times New Roman", Times, serif;
             cursor: pointer;
         }
 
-        button:hover { background: #2558bb; }
+        button:hover { background: #d2d2d2; }
 
-        .error {
-            min-height: 1.25rem;
-            margin: 12px 0 4px;
-            color: #c21f39;
-            text-align: center;
-            font-size: 0.92rem;
-        }
-
+        .error,
         .success {
-            min-height: 1.25rem;
-            margin: 0 0 4px;
-            color: #1a7f37;
+            min-height: 24px;
+            margin: 10px 0 0;
             text-align: center;
-            font-size: 0.92rem;
         }
+
+        .error { color: #8b0000; }
+        .success { color: #0a5b0a; }
 
         .login-link {
-            display: block;
-            margin-top: 8px;
-            text-align: center;
-            font-size: 0.92rem;
-            color: #2f6feb;
-            text-decoration: none;
+            display: inline-block;
+            margin-top: 14px;
+            color: #000;
         }
-
-        .login-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-<div class="register-card">
-    <h2>Create Account</h2>
+<div class="page">
+    <h2>New User Registration</h2>
 
     <form action="/register" method="post">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input id="username" type="text" name="username" placeholder="Choose a username" required>
+        <div class="row">
+            <label for="username">User Name</label>
+            <input id="username" type="text" name="username" placeholder="Enter user name" required>
         </div>
 
-        <div class="form-group">
+        <div class="row">
             <label for="password">Password</label>
-            <input id="password" type="password" name="password" placeholder="Choose a password" required>
+            <input id="password" type="password" name="password" placeholder="Enter password" required>
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit">Create Account</button>
     </form>
 
     <p class="error">[[${error}]]</p>
     <p class="success">[[${msg}]]</p>
-    <a class="login-link" href="/login">Already have an account? Login</a>
+    <a class="login-link" href="/login">Already registered? Go to login.</a>
 </div>
 </body>
 </html>

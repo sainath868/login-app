@@ -3,28 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OAuth2 Login</title>
+    <title>Login</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #f5f7fb; margin: 0; display: grid; place-items: center; min-height: 100vh; }
-        .card { background: #fff; width: 380px; padding: 24px; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
-        h1 { margin: 0 0 16px; font-size: 1.4rem; }
-        p { color: #555; }
-        .oauth-btn { display: block; text-align: center; text-decoration: none; margin-top: 12px; padding: 12px; border-radius: 8px; font-weight: 700; }
-        .google { background: #4285F4; color: #fff; }
-        .github { background: #24292e; color: #fff; }
-        .home-link { display: inline-block; margin-top: 18px; color: #2f6feb; text-decoration: none; }
+        body {
+            margin: 0;
+            background: #d8d8d8;
+            font-family: "Times New Roman", Times, serif;
+            color: #000;
+        }
+
+        .page {
+            width: 520px;
+            margin: 60px auto;
+            background: #f4f4f4;
+            border: 2px solid #444;
+            padding: 20px 22px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 30px;
+            text-align: center;
+            border-bottom: 1px solid #666;
+            padding-bottom: 8px;
+        }
+
+        p {
+            margin: 12px 0;
+            line-height: 1.4;
+        }
+
+        .auth-link {
+            display: block;
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #555;
+            text-decoration: none;
+            color: #000;
+            background: #eaeaea;
+            font-weight: bold;
+        }
+
+        .auth-link:hover {
+            background: #dcdcdc;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: #000;
+        }
     </style>
 </head>
 <body>
-<div class="card">
-    <h1>Sign in with OAuth2</h1>
-    <p>Use one of the providers below to authenticate securely.</p>
+<div class="page">
+    <h1>User Login</h1>
+    <p>Please choose a login provider below to continue.</p>
 
-    <!-- Spring Security automatically handles these provider endpoints. -->
-    <a class="oauth-btn google" href="/oauth2/authorization/google">Continue with Google</a>
-    <a class="oauth-btn github" href="/oauth2/authorization/github">Continue with GitHub</a>
+    <a class="auth-link" href="/oauth2/authorization/google">Login using Google</a>
+    <a class="auth-link" href="/oauth2/authorization/github">Login using GitHub</a>
 
-    <a class="home-link" href="/">Back to home</a>
+    <a class="home-link" href="/">Return to home page</a>
 </div>
 </body>
 </html>
